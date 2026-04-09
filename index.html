@@ -7,144 +7,89 @@
 <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,600;0,700;0,900;1,900&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --yellow:#F5C000;
-  --dark:#1F1F1D;
-  --dark-soft:#2c2c29;
-  --white:#ffffff;
-  --off:#f7f7f5;
-  --muted:#6b6b67;
-}
+:root{--yellow:#F5C000;--dark:#1F1F1D;--dark-soft:#2c2c29;--white:#ffffff;--muted:#6b6b67;}
 body{font-family:'Barlow',sans-serif;background:var(--white);color:var(--dark);font-size:16px;line-height:1.5}
-
-nav{
-  display:flex;align-items:center;justify-content:space-between;
-  padding:1.1rem 3rem;
-  background:var(--dark);
-  position:sticky;top:0;z-index:100;
-}
-.wordmark{
-  font-size:1.6rem;font-weight:700;letter-spacing:0.01em;
-  color:var(--white);text-decoration:none;text-transform:none;
-}
+nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 1.5rem;background:var(--dark);position:sticky;top:0;z-index:100;}
+.wordmark{font-size:1.4rem;font-weight:700;letter-spacing:0.01em;color:var(--white);text-decoration:none}
 .wordmark span{color:var(--yellow)}
-.nav-links{display:flex;gap:2rem;align-items:center}
-.nav-links a{font-size:0.85rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:rgba(255,255,255,0.6);text-decoration:none}
+.nav-links{display:flex;gap:1.5rem;align-items:center}
+.nav-links a{font-size:0.8rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:rgba(255,255,255,0.6);text-decoration:none}
 .nav-links a:hover{color:var(--white)}
-.nav-cta{
-  background:var(--yellow);color:var(--dark);
-  font-size:0.8rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;
-  padding:0.55rem 1.25rem;text-decoration:none;
-  display:inline-flex;align-items:center;gap:0.5rem;
-}
+.nav-hide-mobile{display:inline}
+.nav-cta{background:var(--yellow);color:var(--dark);font-size:0.8rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:0.55rem 1.1rem;text-decoration:none;display:inline-flex;align-items:center;gap:0.4rem;white-space:nowrap;}
 .nav-cta:hover{background:#e0ae00}
-
-.hero{
-  display:grid;grid-template-columns:1fr 380px;
-  min-height:340px;
-}
-.hero-left{
-  background:var(--dark);
-  padding:4rem 3rem;
-  display:flex;flex-direction:column;justify-content:flex-end;
-}
-.hero-left h1{
-  font-size:clamp(2.4rem,4.5vw,3.8rem);
-  font-weight:900;
-  font-style:italic;
-  line-height:1.05;
-  color:var(--white);
-  text-transform:uppercase;
-  letter-spacing:-0.01em;
-}
+.hero{display:grid;grid-template-columns:1fr 380px;min-height:340px;}
+.hero-left{background:var(--dark);padding:4rem 3rem;display:flex;flex-direction:column;justify-content:flex-end;}
+.hero-left h1{font-size:clamp(2.4rem,4.5vw,3.8rem);font-weight:900;font-style:italic;line-height:1.05;color:var(--white);text-transform:uppercase;letter-spacing:-0.01em;}
 .hero-left h1 span{color:var(--yellow)}
-.hero-left h1 .underline{
-  display:inline-block;
-  border-bottom:4px solid var(--yellow);
-  padding-bottom:2px;
-}
-.hero-right{
-  background:var(--white);
-  padding:3rem 2.5rem;
-  display:flex;flex-direction:column;justify-content:space-between;
-  border-left:4px solid var(--yellow);
-}
-.hero-right p{
-  font-size:1rem;font-weight:400;color:var(--dark);line-height:1.65;
-}
+.hero-left h1 .underline{display:inline-block;border-bottom:4px solid var(--yellow);padding-bottom:2px;}
+.hero-right{background:var(--white);padding:3rem 2.5rem;display:flex;flex-direction:column;justify-content:space-between;border-left:4px solid var(--yellow);}
+.hero-right p{font-size:1rem;font-weight:400;color:var(--dark);line-height:1.65;}
 .hero-right p strong{font-weight:700}
-.cta-btn{
-  display:inline-flex;align-items:center;justify-content:space-between;
-  background:var(--yellow);color:var(--dark);
-  font-size:0.9rem;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;
-  padding:0.9rem 1.25rem;text-decoration:none;margin-top:2rem;
-  gap:1rem;
-}
+.cta-btn{display:inline-flex;align-items:center;justify-content:space-between;background:var(--yellow);color:var(--dark);font-size:0.9rem;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;padding:0.9rem 1.25rem;text-decoration:none;margin-top:2rem;gap:1rem;}
 .cta-btn:hover{background:#e0ae00}
 .arrow{font-size:1.1rem}
-
-.band{background:var(--yellow);padding:3rem 3rem;}
-.band h2{
-  font-size:clamp(1.4rem,2.5vw,1.9rem);font-weight:900;font-style:italic;
-  text-transform:uppercase;color:var(--dark);max-width:680px;line-height:1.15;margin-bottom:0.6rem;
-}
-.band p{font-size:1.05rem;font-weight:400;color:var(--dark-soft);max-width:600px;}
-
+.band{background:var(--yellow);padding:3rem;}
+.band h2{font-size:clamp(1.3rem,2.5vw,1.9rem);font-weight:900;font-style:italic;text-transform:uppercase;color:var(--dark);max-width:680px;line-height:1.15;margin-bottom:0.6rem;}
+.band p{font-size:1rem;font-weight:400;color:var(--dark-soft);max-width:600px;}
 .cards-section{background:var(--yellow);padding:0 3rem 3rem;}
 .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(0,0,0,0.15)}
 .card{background:var(--yellow);padding:2rem 1.75rem;display:flex;flex-direction:column;gap:1rem;}
-.card-icon{
-  width:52px;height:52px;border:2px solid var(--dark);border-radius:50%;
-  display:flex;align-items:center;justify-content:center;font-size:1.3rem;
-}
+.card-icon{width:52px;height:52px;border:2px solid var(--dark);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;}
 .card h3{font-size:1rem;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;color:var(--dark)}
 .card p{font-size:0.875rem;color:var(--dark-soft);line-height:1.6;flex:1}
 .card a{font-size:0.8rem;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:var(--dark);text-decoration:none;display:inline-flex;align-items:center;gap:0.35rem}
 .card a:hover{text-decoration:underline}
-
-.proof{padding:5rem 3rem;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;}
-.proof h2{
-  font-size:clamp(2rem,4vw,3.2rem);font-weight:900;font-style:italic;
-  text-transform:uppercase;line-height:1.05;color:var(--dark);
-}
+.proof{padding:5rem 3rem;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;}
+.proof h2{font-size:clamp(2rem,4vw,3.2rem);font-weight:900;font-style:italic;text-transform:uppercase;line-height:1.05;color:var(--dark);}
 .proof h2 span{color:var(--yellow)}
 .proof-right p{font-size:1.05rem;color:var(--muted);line-height:1.75;margin-bottom:1.5rem;}
 .proof-right p strong{color:var(--dark);font-weight:700}
-
-.steps{margin-top:2rem;display:flex;flex-direction:column;gap:0}
+.steps{margin-top:2rem;display:flex;flex-direction:column;}
 .step{display:flex;gap:1.5rem;align-items:flex-start;padding:1.5rem 0;border-top:1px solid rgba(0,0,0,0.1);}
 .step-num{font-size:1.8rem;font-weight:900;font-style:italic;color:var(--yellow);min-width:2.5rem;line-height:1;}
 .step h3{font-size:0.95rem;font-weight:700;text-transform:uppercase;letter-spacing:0.04em;margin-bottom:0.3rem}
 .step p{font-size:0.875rem;color:var(--muted);line-height:1.6}
-
-.banner{
-  background:var(--dark);padding:5rem 3rem;
-  display:flex;justify-content:space-between;align-items:center;gap:3rem;flex-wrap:wrap;
-}
-.banner h2{
-  font-size:clamp(1.8rem,3vw,2.8rem);font-weight:900;font-style:italic;
-  text-transform:uppercase;color:var(--white);line-height:1.1;
-}
+.banner{background:var(--dark);padding:5rem 3rem;display:flex;justify-content:space-between;align-items:center;gap:3rem;flex-wrap:wrap;}
+.banner h2{font-size:clamp(1.8rem,3vw,2.8rem);font-weight:900;font-style:italic;text-transform:uppercase;color:var(--white);line-height:1.1;}
 .banner h2 span{color:var(--yellow)}
 .banner p{color:rgba(255,255,255,0.55);font-size:1rem;margin-top:0.75rem;max-width:420px}
-
-footer{
-  background:var(--dark);border-top:1px solid rgba(255,255,255,0.08);
-  padding:1.5rem 3rem;display:flex;justify-content:space-between;align-items:center;
-}
+footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.08);padding:1.5rem 3rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:0.5rem;}
 footer p{font-size:0.8rem;color:rgba(255,255,255,0.35);letter-spacing:0.02em}
+@media(max-width:768px){
+  nav{padding:1rem 1.25rem;}
+  .wordmark{font-size:1.2rem;}
+  .nav-hide-mobile{display:none;}
+  .hero{grid-template-columns:1fr;}
+  .hero-left{padding:3rem 1.5rem 2.5rem;}
+  .hero-left h1{font-size:2.6rem;}
+  .hero-right{padding:2rem 1.5rem;border-left:none;border-top:4px solid var(--yellow);}
+  .cta-btn{width:100%;justify-content:space-between;}
+  .band{padding:2rem 1.5rem;}
+  .cards-section{padding:0 1.5rem 2rem;}
+  .cards{grid-template-columns:1fr 1fr;}
+  .proof{grid-template-columns:1fr;gap:2.5rem;padding:3rem 1.5rem;}
+  .proof h2{font-size:2.2rem;}
+  .banner{padding:3rem 1.5rem;flex-direction:column;align-items:flex-start;}
+  .banner h2{font-size:2rem;}
+  .banner .cta-btn{width:100%;justify-content:space-between;}
+  footer{padding:1.5rem;flex-direction:column;align-items:flex-start;gap:0.25rem;}
+}
+@media(max-width:480px){
+  .hero-left h1{font-size:2rem;}
+  .cards{grid-template-columns:1fr;}
+  .proof h2{font-size:1.8rem;}
+}
 </style>
 </head>
 <body>
-
 <nav>
   <a class="wordmark" href="#">nordstar <span>innovation</span></a>
   <div class="nav-links">
-    <a href="#how">How it works</a>
+    <a href="#how" class="nav-hide-mobile">How it works</a>
     <a href="#contact" class="nav-cta">Talk to us <span class="arrow">→</span></a>
   </div>
 </nav>
-
 <div class="hero">
   <div class="hero-left">
     <h1>Your tools.<br>Finally <span class="underline">working</span><br><span>for you.</span></h1>
@@ -154,61 +99,26 @@ footer p{font-size:0.8rem;color:rgba(255,255,255,0.35);letter-spacing:0.02em}
     <a href="#contact" class="cta-btn">Book a free audit <span class="arrow">→</span></a>
   </div>
 </div>
-
 <div class="band">
   <h2>You're paying for software that isn't earning its keep.</h2>
   <p>Most small businesses have Xero, a website, maybe even ChatGPT. Very few have any of it set up properly. We fix that.</p>
 </div>
-
 <div class="cards-section">
   <div class="cards">
-    <div class="card">
-      <div class="card-icon">£</div>
-      <h3>Getting paid</h3>
-      <p>Automated invoicing, reminders, and reconciliation. Chasing payment manually should not be eating your week.</p>
-      <a href="#contact">Learn more →</a>
-    </div>
-    <div class="card">
-      <div class="card-icon">↗</div>
-      <h3>Your website</h3>
-      <p>You have one. It's probably not converting. Clear copy and structure can fix that without a full rebuild.</p>
-      <a href="#contact">Learn more →</a>
-    </div>
-    <div class="card">
-      <div class="card-icon">~</div>
-      <h3>Cash flow</h3>
-      <p>You're likely already paying for a tool that tracks this. We make it show you what you actually need to see.</p>
-      <a href="#contact">Learn more →</a>
-    </div>
-    <div class="card">
-      <div class="card-icon">+</div>
-      <h3>What to invest</h3>
-      <p>Understanding your margins and where the slack is shouldn't need an accountant every quarter.</p>
-      <a href="#contact">Learn more →</a>
-    </div>
+    <div class="card"><div class="card-icon">£</div><h3>Getting paid</h3><p>Automated invoicing, reminders, and reconciliation. Chasing payment manually should not be eating your week.</p><a href="#contact">Learn more →</a></div>
+    <div class="card"><div class="card-icon">↗</div><h3>Your website</h3><p>You have one. It's probably not converting. Clear copy and structure can fix that without a full rebuild.</p><a href="#contact">Learn more →</a></div>
+    <div class="card"><div class="card-icon">~</div><h3>Cash flow</h3><p>You're likely already paying for a tool that tracks this. We make it show you what you actually need to see.</p><a href="#contact">Learn more →</a></div>
+    <div class="card"><div class="card-icon">+</div><h3>What to invest</h3><p>Understanding your margins and where the slack is shouldn't need an accountant every quarter.</p><a href="#contact">Learn more →</a></div>
   </div>
 </div>
-
 <section class="proof" id="how">
   <div class="proof-left">
     <h2>We're not your <span>typical</span> consultancy.</h2>
     <div class="steps">
-      <div class="step">
-        <span class="step-num">01</span>
-        <div><h3>Audit what you've got</h3><p>A focused conversation about your tools, what you're paying, and what's actually being used. No jargon.</p></div>
-      </div>
-      <div class="step">
-        <span class="step-num">02</span>
-        <div><h3>Find the gaps</h3><p>We identify exactly where the inefficiency lives and what closing it would be worth to you.</p></div>
-      </div>
-      <div class="step">
-        <span class="step-num">03</span>
-        <div><h3>Configure it properly</h3><p>Using AI tools and 30 years of transformation experience, we set your systems up to actually work.</p></div>
-      </div>
-      <div class="step">
-        <span class="step-num">04</span>
-        <div><h3>Hand it back or maintain it</h3><p>Fully trained and ready to run it yourself, or we stay on light-touch retainer. Your call.</p></div>
-      </div>
+      <div class="step"><span class="step-num">01</span><div><h3>Audit what you've got</h3><p>A focused conversation about your tools, what you're paying, and what's actually being used. No jargon.</p></div></div>
+      <div class="step"><span class="step-num">02</span><div><h3>Find the gaps</h3><p>We identify exactly where the inefficiency lives and what closing it would be worth to you.</p></div></div>
+      <div class="step"><span class="step-num">03</span><div><h3>Configure it properly</h3><p>Using AI tools and 30 years of transformation experience, we set your systems up to actually work.</p></div></div>
+      <div class="step"><span class="step-num">04</span><div><h3>Hand it back or maintain it</h3><p>Fully trained and ready to run it yourself, or we stay on light-touch retainer. Your call.</p></div></div>
     </div>
   </div>
   <div class="proof-right">
@@ -218,7 +128,6 @@ footer p{font-size:0.8rem;color:rgba(255,255,255,0.35);letter-spacing:0.02em}
     <a href="#contact" class="cta-btn" style="max-width:320px">Book a free audit <span class="arrow">→</span></a>
   </div>
 </section>
-
 <div class="banner" id="contact">
   <div>
     <h2>Ready to stop <span>leaving money</span> on the table?</h2>
@@ -226,11 +135,9 @@ footer p{font-size:0.8rem;color:rgba(255,255,255,0.35);letter-spacing:0.02em}
   </div>
   <a href="mailto:hello@nordstarinnovation.co.uk" class="cta-btn" style="flex-shrink:0">Get in touch <span class="arrow">→</span></a>
 </div>
-
 <footer>
   <p>Nordstar Innovation Ltd — Registered in England &amp; Wales</p>
   <p>hello@nordstarinnovation.co.uk</p>
 </footer>
-
 </body>
 </html>
